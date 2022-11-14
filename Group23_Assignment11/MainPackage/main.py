@@ -3,9 +3,7 @@ import requests
 import json
 response = requests.get('https://api.nasa.gov/techtransfer/spinoff/?engine&api_key=ADNQpEjTKmiNQlpGKnP7KfiCTfrZ9qLpsoAsVtjr')
 json_string = response.content
-
 import re
-
 
 def unhtml(string):
     # replace <tag>...</tag>, possibly more than once
@@ -30,12 +28,12 @@ def cleanup(element):
         element = unhtml(element)
 
     return element
-
 data = json.loads(json_string)
 cleanup(data)
 json_string = json.dumps(data)
-
+#print(json_string)
 parsed_json = json.loads(json_string) # Now we have a python dictionary
 
 #get the values associated w/ parsed_json
-print(parsed_json['results'][6][3][:10])
+print(parsed_json['results'][6][2])
+print(parsed_json['results'][6][3])
