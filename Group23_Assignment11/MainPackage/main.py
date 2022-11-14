@@ -14,5 +14,7 @@ json_string = json.dumps(data)
 parsed_json = json.loads(json_string) # Now we have a python dictionary
 
 #showing some interesting data from NASA Tech Transfer
-print(parsed_json['results'][6][2])
-print(parsed_json['results'][6][3])
+print("NASA's"' Tech Transfer Program "ensures that innovations developed for exploration and discovery are broadly available to the public, maximizing the benefit of the nation".')
+print("Here's an example of the Tech Transfer Program!")
+print("Title: "+parsed_json['results'][6][2])
+print("Explanation: "+parsed_json['results'][6][3])
